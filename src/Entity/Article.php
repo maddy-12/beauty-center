@@ -32,7 +32,7 @@ class Article
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $url_img;
+    private $urlImg;
 
     /**
      * @ORM\ManyToMany(targetEntity=Category::class, inversedBy="articles")
@@ -81,12 +81,12 @@ class Article
 
     public function getUrlImg(): ?string
     {
-        return $this->url_img;
+        return $this->urlImg;
     }
 
-    public function setUrlImg(?string $url_img): self
+    public function setUrlImg(?string $urlImg): self
     {
-        $this->url_img = $url_img;
+        $this->urlImg = $urlImg;
 
         return $this;
     }

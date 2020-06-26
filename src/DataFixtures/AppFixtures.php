@@ -38,7 +38,10 @@ class AppFixtures extends Fixture
                 $oneArticle->setContent($faker->text(255));
                 $oneArticle->setUrlImg($faker->imageUrl());
                 $oneArticle->setUser($oneUser);
-                $oneArticle->addCategory($categories[mt_rand(0, count($categories) - 1)]);
+                for ($l = 0; $l < mt_rand(1, 3); $l++) {
+                    $oneArticle->addCategory($categories[mt_rand(0, count($categories) - 1)]);
+                }
+
                 $manager->persist($oneArticle);
             }
         }

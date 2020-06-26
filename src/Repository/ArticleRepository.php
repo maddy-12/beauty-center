@@ -47,4 +47,13 @@ class ArticleRepository extends ServiceEntityRepository
         ;
     }
     */
+    public function search($value)
+    {
+        $valueWithPercent = "%$value%";
+        return $this->createQueryBuilder('p')
+            ->andWhere('p.content like :val')
+            ->setParameter('val', $valueWithPercent)
+            ->getQuery()
+            ->getResult();
+    }
 }

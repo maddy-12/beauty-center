@@ -156,6 +156,18 @@
             "config/packages/sensio_framework_extra.yaml"
         ]
     },
+    "symfony/apache-pack": {
+        "version": "1.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "1.0",
+            "ref": "71599f5b0fdeeeec0fb90e9b17c85e6f5e1350c1"
+        },
+        "files": [
+            "public/.htaccess"
+        ]
+    },
     "symfony/asset": {
         "version": "v4.4.10"
     },
@@ -351,10 +363,16 @@
             "tests/bootstrap.php"
         ]
     },
+    "symfony/polyfill-intl-grapheme": {
+        "version": "v1.17.1"
+    },
     "symfony/polyfill-intl-icu": {
         "version": "v1.17.1"
     },
     "symfony/polyfill-intl-idn": {
+        "version": "v1.17.1"
+    },
+    "symfony/polyfill-intl-normalizer": {
         "version": "v1.17.1"
     },
     "symfony/polyfill-mbstring": {
@@ -430,6 +448,9 @@
     },
     "symfony/stopwatch": {
         "version": "v4.4.10"
+    },
+    "symfony/string": {
+        "version": "v5.1.2"
     },
     "symfony/test-pack": {
         "version": "v1.0.6"
@@ -510,6 +531,9 @@
         "version": "v4.4.10"
     },
     "twig/extra-bundle": {
+        "version": "v3.0.3"
+    },
+    "twig/string-extra": {
         "version": "v3.0.3"
     },
     "twig/twig": {

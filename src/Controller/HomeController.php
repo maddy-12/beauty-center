@@ -2,18 +2,28 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Repository\ArticleRepository;
+use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class HomeController extends AbstractController
 {
     /**
      * @Route("/home", name="home")
      */
-    public function index()
+    public function index(Request $request, EntityManagerInterface $manager, ArticleRepository $articleRepo): Response
     {
+
+        if ($request->query->has('search')) {
+            $articles = $articleRepo->search($request->query->get('search'));
+        } else {
+            $articles = $articleRepo->findAll();
+        }
         return $this->render('home/index.html.twig', [
-            'controller_name' => 'HomeController',
+            'articles' => $articles,
         ]);
     }
 }
