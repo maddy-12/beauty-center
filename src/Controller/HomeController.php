@@ -12,7 +12,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class HomeController extends AbstractController
 {
     /**
-     * @Route("/home", name="home")
+     * @Route("/", name="home")
      */
     public function index(Request $request, EntityManagerInterface $manager, ArticleRepository $articleRepo): Response
     {
@@ -26,4 +26,20 @@ class HomeController extends AbstractController
             'articles' => $articles,
         ]);
     }
+
+    /**
+     * @Route("/display/{id}", name="home")
+     */
+    // public function index(Request $request, EntityManagerInterface $manager, ArticleRepository $articleRepo): Response
+    // {
+
+    // if ($request->query->has('search')) {
+    //     $articles = $articleRepo->search($request->query->get('search'));
+    // } else {
+    //     $articles = $articleRepo->findAll();
+    // }
+    // return $this->render('home/index.html.twig', [
+    //     'articles' => $articles,
+    // ]);
+    //  }
 }
